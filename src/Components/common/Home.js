@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { getAllVideos } from "../../api/fetch";
 
 
 
@@ -6,6 +7,7 @@ export default function Home() {
     const [searchTerm, setSearchTerm] = useState("");
     const [videos, setVideos] = useState([]);
     const [allVideos, setAllVideos] = useState([]);
+    const [loadingError, setLoadingError] = useState(false);
 
 
     function handleSubmit(event) {
@@ -21,6 +23,16 @@ export default function Home() {
           return video.items.snippet.title.toLowerCase().match(search.toLowerCase());
         })
       }
+
+      useEffect(() => {
+        getAllVideos().then((response) => {
+          setVideos(response);
+          setAllVideos(response);
+          setLoadingError(false);
+        }).catch((error) => {
+          setLoadingError(true);
+        })
+      }, [])
 
 
   return (
