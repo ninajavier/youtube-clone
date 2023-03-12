@@ -7,25 +7,35 @@ export default function Home() {
   const [searchResults, setSearchResults] = useState([]);
 
 
-  useEffect(() => {
-    async function fetchData() {
-      if (searchTerm !== "") {
-        const apiKey = "AIzaSyAiAM4YfR9rlIqsR47JTCsFnnYR4BgqJG4";
+//   useEffect(() => {
+//     async function fetchData() {
+//       if (searchTerm !== "") {
+//         const apiKey = "AIzaSyAx57IX5X24MyPXeqkir7fzwCSlV_wnyBg";
+//         const url = `https://youtube.googleapis.com/youtube/v3/search?q=${searchTerm}&part=snippet&maxResults=10&key=${apiKey}`;
+
+//         const response = await fetch(url);
+//         const videos = await response.json();
+
+//         setSearchResults(videos.items);
+//       }
+//     }
+
+//     fetchData();
+//   }, [searchTerm]);
+
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    const apiKey = "AIzaSyAx57IX5X24MyPXeqkir7fzwCSlV_wnyBg";
         const url = `https://youtube.googleapis.com/youtube/v3/search?q=${searchTerm}&part=snippet&maxResults=10&key=${apiKey}`;
 
         const response = await fetch(url);
         const videos = await response.json();
 
         setSearchResults(videos.items);
-      }
-    }
-
-    fetchData();
-  }, [searchTerm]);
 
 
-  function handleSubmit(event) {
-    event.preventDefault();
   }
 
   return (
