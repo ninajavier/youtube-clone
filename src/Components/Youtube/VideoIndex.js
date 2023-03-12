@@ -1,9 +1,18 @@
 export default function VideoIndex({ searchResults }) {
-  return (
-    <div>
-      {searchResults.map((video) => {
-        return <p>{video.items.snippet.title}</p>;
-      })}
-    </div>
-  )
+
+    return (
+        <div>
+            {searchResults.map((video) => {
+                return (
+
+                    <div>
+                        <img src={video.snippet.thumbnails.default.url} />
+                        <p>{video.snippet.title}</p>
+                    </div>
+
+
+                )
+            })}
+        </div>
+    )
 }
