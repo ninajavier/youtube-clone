@@ -1,6 +1,5 @@
 import { useState } from "react";
 // import { getAllVideos } from "../../API/fetch";
-import VideoIndex from "../Youtube/VideoIndex";
 
 
 export default function Home() {
@@ -17,7 +16,7 @@ export default function Home() {
     const videos = await response.json();
 
     setSearchResults(videos.items);
-    console.log(searchResults)
+    console.log(searchResults);
   }
 
   return (
@@ -34,6 +33,11 @@ export default function Home() {
       </form>
       <VideoIndex searchResults={searchResults}/>
 
+      {/* <section className="videos-index">
+        {searchResults.map((video) => {
+          return <VideoListing video={video} key={video.id} />;
+        })}
+      </section> */}
     </div>
-  );
+  )
 }
