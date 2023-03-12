@@ -28,6 +28,8 @@ export default function Home() {
   async function handleSubmit(event) {
     event.preventDefault();
 
+    
+
     const apiKey = "AIzaSyAx57IX5X24MyPXeqkir7fzwCSlV_wnyBg";
         const url = `https://youtube.googleapis.com/youtube/v3/search?q=${searchTerm}&part=snippet&maxResults=10&key=${apiKey}`;
 
@@ -51,6 +53,8 @@ export default function Home() {
         />
         <button type="submit">Search</button>
       </form>
+
+      {/* <p>No Search Results Yet, Please submit a search above!</p> */}
 
       <section className="videos-index">
         <VideoIndex searchResults={searchResults} />
