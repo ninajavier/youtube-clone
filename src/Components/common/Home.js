@@ -1,6 +1,6 @@
 import { useState } from "react";
 // import { getAllVideos } from "../../API/fetch";
-
+import VideoIndex from "../Youtube/VideoIndex";
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} >
         <input
           type="text"
           value={searchTerm}
@@ -31,13 +31,10 @@ export default function Home() {
         />
         <button type="submit">Search</button>
       </form>
-      <VideoIndex searchResults={searchResults}/>
 
-      {/* <section className="videos-index">
-        {searchResults.map((video) => {
-          return <VideoListing video={video} key={video.id} />;
-        })}
-      </section> */}
+      <section className="videos-index">
+      <VideoIndex searchResults={searchResults}/>
+      </section>
     </div>
   )
 }
