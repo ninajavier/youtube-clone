@@ -1,26 +1,32 @@
 import { useState } from "react";
+import { getAllVideos } from "../../API/fetch";
 
 
 
 export default function Home() {
     const [searchTerm, setSearchTerm] = useState("");
     const [videos, setVideos] = useState([]);
-    const [allVideos, setAllVideos] = useState([]);
+    // const [allVideos, setAllVideos] = useState([]);
 
 
-    function handleSubmit(event) {
-        const title = event.target.value;
-        const result = title.length ? filterVideos(title, allVideos) : allVideos;
+    // function handleSubmit(event) {
+    //     const title = event.target.value;
+    //     const result = title.length ? filterVideos(title, allVideos) : allVideos;
         
-        setSearchTerm(title);
-        setVideos(result);
-      }
+    //     setSearchTerm(title);
+    //     setVideos(result);
+    //   }
 
-      function filterVideos(search, videos) {
-        return videos.filter((video) => {
-          return video.items.snippet.title.toLowerCase().match(search.toLowerCase());
-        })
-      }
+
+
+    function handleSearch () {
+        getAllVideos(searchTerm)
+
+    }
+
+    console.log(handleSearch)
+
+    // console.log(searchTerm)
 
 
   return (
@@ -31,10 +37,11 @@ export default function Home() {
         value={searchTerm}
         id="searchTitle"
         placeholder="Search..."
+        onChange={(e) => setSearchTerm(e.target.value)}
       />
       <input 
       type="submit"
-      onSumbit={handleSubmit}
+      onClick={() => handleSearch()}
       />
       </form>
 
