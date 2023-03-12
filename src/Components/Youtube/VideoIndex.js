@@ -1,3 +1,4 @@
-export default function VideoIndex() {
+export default function VideoIndex({ searchResults }) {
+
     
 }
