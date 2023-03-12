@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom"
+
 export default function Navbar() {
 
 
@@ -7,9 +9,10 @@ export default function Navbar() {
 
         <nav>
             {/* home will be a link */}
-            <h3>Home</h3>
+            <NavLink to="/"><h3>Home</h3></NavLink>
+            
             {/* about will be a link */}
-            <h3>About</h3>
+            <NavLink to="/about"><h3>About</h3></NavLink>
         </nav>
     </header>
 
