@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import { getAllVideos } from "../../API/fetch";
 import VideoIndex from "../Youtube/VideoIndex";
 
@@ -6,17 +6,26 @@ export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
-  async function handleSubmit(event) {
+
+  useEffect(() => {
+    async function fetchData() {
+      if (searchTerm !== "") {
+        const apiKey = "AIzaSyAiAM4YfR9rlIqsR47JTCsFnnYR4BgqJG4";
+        const url = `https://youtube.googleapis.com/youtube/v3/search?q=${searchTerm}&part=snippet&maxResults=10&key=${apiKey}`;
+
+        const response = await fetch(url);
+        const videos = await response.json();
+
+        setSearchResults(videos.items);
+      }
+    }
+
+    fetchData();
+  }, [searchTerm]);
+
+
+  function handleSubmit(event) {
     event.preventDefault();
-
-    const apiKey = "AIzaSyAiAM4YfR9rlIqsR47JTCsFnnYR4BgqJG4";
-    const url = `https://youtube.googleapis.com/youtube/v3/search?q=${searchTerm}&part=snippet&maxResults=10&key=${apiKey}`;
-
-    const response = await fetch(url);
-    const videos = await response.json();
-
-    setSearchResults(videos.items);
-    console.log(searchResults);
   }
 
   return (
@@ -33,8 +42,8 @@ export default function Home() {
       </form>
 
       <section className="videos-index">
-        <VideoIndex searchResults={searchResults} /> 
+        <VideoIndex searchResults={searchResults} />
       </section>
     </div>
-  )
+  );
 }
