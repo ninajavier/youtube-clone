@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom"
+
 export default function Navbar() {
 
 
@@ -6,10 +8,8 @@ export default function Navbar() {
         <h2>Youtube</h2>
 
         <nav>
-            {/* home will be a link */}
-            <h3>Home</h3>
-            {/* about will be a link */}
-            <h3>About</h3>
+            <NavLink to="/"><h3>Home</h3></NavLink>
+            <NavLink to="/about"><h3>About</h3></NavLink>
         </nav>
     </header>
 
