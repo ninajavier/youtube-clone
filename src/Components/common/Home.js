@@ -54,7 +54,7 @@ export default function Home() {
         <button type="submit">Search</button>
       </form>
 
-      {/* <p>No Search Results Yet, Please submit a search above!</p> */}
+      <p>No Search Results Yet, Please submit a search above!</p>
 
       <section className="videos-index">
         <VideoIndex searchResults={searchResults} />
