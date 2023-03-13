@@ -7,7 +7,7 @@ export default function VideoIndex({ searchResults }) {
                 return (
 
                     <div>
-                        <img src={video.snippet.thumbnails.default.url} />
+                        <NavLink to={`/videos/${video.id.videoId}`}><img src={video.snippet.thumbnails.default.url} /></NavLink>
                         <p>{video.snippet.title}</p>
                     </div>
 
