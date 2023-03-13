@@ -4,6 +4,7 @@ import './App.css';
 import Navbar from './Components/common/Navbar';
 import Home from './Components/common/Home';
 import About from './Components/common/About';
+import VideoListing from './Components/Youtube/VideoListing';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       
       <Route path='/' element={<Home/>}/>
       <Route path='/about' element={<About/>}/>
+      <Route path='/videos/:id' element={<VideoListing/>}/>
 
       </Routes>
     </div>
