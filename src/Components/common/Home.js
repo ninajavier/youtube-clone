@@ -53,11 +53,11 @@ export default function Home() {
         <button type="submit">Search</button>
       </form>
 
-      {/* <p>No Search Results Yet, Please submit a search above!</p> */}
+      
 
       <section className="videos-index">
         {searchResults.length === 0 ? (
-          <p>Search for something pls</p>
+          <p>No Search Results Yet, Please submit a search above!</p>
         ) : (
           <VideoIndex searchResults={searchResults} />
         )}
