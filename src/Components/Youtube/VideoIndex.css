@@ -1,13 +1,13 @@
 .videos {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-left: 15em;
-    padding-right: 15em;
+    padding-left: 12em;
+    padding-right: 12em;
     padding-top: 50px;
 }
 
 .video img {
-width: 400px;
+width: 20em;
 }
 
 .video {
