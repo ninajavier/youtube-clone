@@ -1,6 +1,7 @@
 import YouTube from "react-youtube";
 import React from "react";
 import { useParams } from "react-router-dom";
+import "./VideoListing.css"
 
 export default function VideoListing() {
   const { id } = useParams();

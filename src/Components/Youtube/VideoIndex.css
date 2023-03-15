@@ -1,0 +1,17 @@
+.videos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 15em;
+    padding-right: 15em;
+    padding-top: 50px;
+}
+
+.video img {
+width: 400px;
+}
+
+.video {
+    padding-top: 1em;
+    font-size: 20px;
+    font-weight: 500;
+}

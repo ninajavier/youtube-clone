@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Home.css";
 
 // import { getAllVideos } from "../../API/fetch";
 import VideoIndex from "../Youtube/VideoIndex";
@@ -57,7 +58,7 @@ export default function Home() {
 
       <section className="videos-index">
         {searchResults.length === 0 ? (
-          <p>No Search Results Yet, Please submit a search above!</p>
+          <p className="errorMessage">No Search Results Yet, Please submit a search above!</p>
         ) : (
           <VideoIndex searchResults={searchResults} />
         )}
