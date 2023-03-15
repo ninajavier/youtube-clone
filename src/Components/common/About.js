@@ -17,9 +17,11 @@ export default function About() {
 
         </div>
 
+        <h2>The Team:</h2>
+
         <div className="team">
 
-        <h2>The Team:</h2>
+        <div className= "bios">
 
         <img height='200px' src={Nina} alt='nina'/>
 
@@ -28,8 +30,19 @@ export default function About() {
         <a href="https://github.com/ninajavier">
             <img height="100px" src={GitLogo}/>
         </a>
+        </div>
+
+        <div className= "bios">
 
         <img height='200px' src={Samuel} alt='Samuel'/>
+
+        <p>Samuel Alba was born and raised in New York City. He is currently a Pursuit Fellow with aspirations of becoming a full stack web developer in the near future. His main interests are sports, fashion and finiance.</p>
+
+        <a href="https://github.com/SamuelBAlba">
+            <img height="100px" src={GitLogo}/>
+        </a>
+
+        </div>
 
 
         </div>
