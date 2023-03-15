@@ -2,6 +2,7 @@ import YouTube from "react-youtube";
 import React from "react";
 import { useParams } from "react-router-dom";
 import "./VideoListing.css"
+import Submit from "./Submit";
 
 export default function VideoListing() {
   const { id } = useParams();
@@ -18,5 +19,15 @@ export default function VideoListing() {
     event.target.pauseVideo();
   }
 
-  return <YouTube videoId={id} opts={opts} onReady={_onReady} />;
+  return (
+    <>
+  
+  <YouTube videoId={id} opts={opts} onReady={_onReady} />
+  <Submit/>
+  </>
+  
+  );
+  
+  
+  
 }
