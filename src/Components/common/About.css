@@ -1,14 +1,40 @@
-.team {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+@media only screen and (min-width: 481px) {
+    .team {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .bios {
+        background-color: rgb(217, 217, 217);
+        margin: 3em;
+        padding: 2em;
+    }
+    
+    h2 {
+        font-size: 30px;
+    }
 }
 
-.bios {
-    background-color: rgb(217, 217, 217);
-    margin: 3em;
-    padding: 2em;
+
+@media only screen and (max-width: 480px) {
+    .team {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    
+    .bios {
+        background-color: rgb(217, 217, 217);
+        margin: 3em;
+        padding: 2em;
+    }
+    
+    h2 {
+        font-size: 30px;
+    }
+
+    .description {
+        margin: 3em;
+    }
 }
 
-h2 {
-    font-size: 30px;
-}
+

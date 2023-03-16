@@ -23,11 +23,6 @@
 
 @media only screen and (max-width: 480px) {
 
-
-
-
-
-    
     header {
         display: grid;
         grid-template-columns: 1fr;
