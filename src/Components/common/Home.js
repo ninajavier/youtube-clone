@@ -31,7 +31,7 @@ export default function Home() {
   async function handleSubmit(event) {
     event.preventDefault();
 
-    const apiKey = "AIzaSyAx57IX5X24MyPXeqkir7fzwCSlV_wnyBg";
+    const apiKey = "AIzaSyAiAM4YfR9rlIqsR47JTCsFnnYR4BgqJG4";
     const url = `https://youtube.googleapis.com/youtube/v3/search?q=${searchTerm}&part=snippet&maxResults=10&key=${apiKey}`;
 
     const response = await fetch(url);
