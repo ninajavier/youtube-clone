@@ -1,52 +1,34 @@
-import { useState } from "react"
+import { useState} from "react"
+import { useEffect } from "react"
+
 export default function Submit() {
 
     const [comment, setComment] = useState([])
-    // const [name, setName] = useState("")
-    // const [text, setText] = useState("")
-    // const [submited, setSubmited] = useState(null)
-
 
 
     function commentHandle(event) {
         event.preventDefault()
 
-        // const element = (
-        //     <div>
-        //         <p>Name: {name}</p>
-        //         <p>Comment: {text}</p>
-        //     </div>
-        // )
 
-        // setSubmited(element)
-        // setName('')
-        // setText('')
-    
         const commenterName = event.target.elements["commenter name"].value
         const commenterText= event.target.elements.comment.value
-        const newComment = {"commenter": commenterName, "commented": commenterText}
-        comment.push(newComment)
-       
+        const newComment = {commenter: commenterName, commented: commenterText}
+        setComment((previous) => [...previous, newComment])
+        event.target.reset()
         
-
-        console.log(comment)
-        
-       
-
-        // console.log(commenterName)
-        // console.log(commenterText)
-
-
 
     }
-    
-    
+
+    useEffect(() => {
+        console.log(comment)
+    }, [comment])
     
     return (
         <div>
             <div className="comments-section">
 
             <form className="comment" onSubmit={commentHandle}>
+            
             <label htmlFor="commenter name">Name</label>
             <input type="text" name="commenter name"/>
             <br/>
@@ -59,15 +41,11 @@ export default function Submit() {
             {comment.map((word) => { 
                 return (
                 <div>
-                <p>{word.commenter}</p>
+                <h3>{word.commenter}</h3>
                 <p>{word.commented}</p> 
                 </div>
                 )
-
             })}
-
-            
-
 
             </div>
         </div>
