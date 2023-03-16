@@ -7,6 +7,7 @@ import VideoIndex from "../Youtube/VideoIndex";
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [currentSearch, setCurrentSearch] = useState("");
 
   //   useEffect(() => {
   //     async function fetchData() {
@@ -31,7 +32,7 @@ export default function Home() {
   async function handleSubmit(event) {
     event.preventDefault();
 
-    const apiKey = "AIzaSyAx57IX5X24MyPXeqkir7fzwCSlV_wnyBg";
+    const apiKey = "AIzaSyAiAM4YfR9rlIqsR47JTCsFnnYR4BgqJG4";
     const url = `https://youtube.googleapis.com/youtube/v3/search?q=${searchTerm}&part=snippet&maxResults=10&key=${apiKey}`;
 
     const response = await fetch(url);
@@ -51,7 +52,7 @@ export default function Home() {
           placeholder="Search..."
           onChange={(event) => setSearchTerm(event.target.value)}
         />
-        <button type="submit">Search</button>
+        <button type="submit" onClick={(event) => setCurrentSearch(searchTerm)}>Search</button>
       </form>
 
       
@@ -60,7 +61,10 @@ export default function Home() {
         {searchResults.length === 0 ? (
           <p className="errorMessage">No Search Results Yet, Please submit a search above!</p>
         ) : (
+          <>
+          <p>Showing results for {currentSearch}</p>
           <VideoIndex searchResults={searchResults} />
+          </>
         )}
       </section>
     </div>
