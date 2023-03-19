@@ -28,7 +28,7 @@ export default function About() {
         <p>Nina Javier is from New Haven, CT. She is currently dedicating herself to the Pursuit fellowship and her ultimate goal is to become a full stack web developer. Her interests include graphic design, nature, and the art of creation.</p>
        
         <a href="https://github.com/ninajavier">
-            <img height="100px" src={GitLogo}/>
+            <img height="100px" src={GitLogo} alt='gitHub logo'/>
         </a>
         </div>
 
@@ -39,7 +39,7 @@ export default function About() {
         <p>Samuel Alba was born and raised in New York City. He is currently a Pursuit Fellow with aspirations of becoming a full stack web developer in the near future. His main interests are sports, fashion and finiance.</p>
 
         <a href="https://github.com/SamuelBAlba">
-            <img height="100px" src={GitLogo}/>
+            <img height="100px" src={GitLogo} alt='gitHub logo'/>
         </a>
 
         </div>
