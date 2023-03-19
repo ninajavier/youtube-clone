@@ -1,0 +1,40 @@
+@media only screen and (min-width: 481px) {
+  .comments-section {
+    padding: 2em;
+    display: grid;
+  }
+
+  .comment {
+    text-align: left;
+
+  }
+
+  input {
+    width: 40em;
+    align-items: center;
+    margin-bottom: 2em;
+  }
+
+  button { 
+    margin-left: 30em;
+  }
+}
+
+
+@media only screen and (max-width: 480px) {
+    .comments-section {
+        padding: 2em;
+      }
+    
+      .comment {
+        text-align: left;
+        padding-left: 2em;
+      }
+    
+      input {
+        width: 20em;
+        align-items: center;
+        margin-bottom: 2em;
+      }
+
+}

@@ -25,7 +25,7 @@ export default function About() {
 
         <img height='200px' src={Nina} alt='nina'/>
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae atque, nobis obcaecati ad vel provident cupiditate deleniti delectus tednndwdd dw dw dwdwi jnwjddnjwdnj</p>
+        <p>Nina Javier is from New Haven, CT. She is currently dedicating herself to the Pursuit fellowship and her ultimate goal is to become a full stack web developer. Her interests include graphic design, nature, and the art of creation.</p>
        
         <a href="https://github.com/ninajavier">
             <img height="100px" src={GitLogo}/>
