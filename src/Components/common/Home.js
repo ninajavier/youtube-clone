@@ -35,8 +35,8 @@ export default function Home() {
     if (searchTerm === "") {
       setShowModal(true);
     } else {
-      const apiKey = "AIzaSyAiAM4YfR9rlIqsR47JTCsFnnYR4BgqJG4";
-      const url = `https://youtube.googleapis.com/youtube/v3/search?q=${searchTerm}&part=snippet&maxResults=10&key=${apiKey}`;
+    
+      const url = `https://youtube.googleapis.com/youtube/v3/search?q=${searchTerm}&part=snippet&maxResults=10&key=${process.env.REACT_APP_API_KEY}`;
 
       const response = await fetch(url);
       const videos = await response.json();
