@@ -30,6 +30,7 @@ export default function Home() {
     setSearchTerm("");
   }
 
+  
   async function handleSubmit(event) {
     event.preventDefault();
     if (searchTerm === "") {
